@@ -118,7 +118,7 @@ class User : NSObject, WCSessionDelegate {
     @available(iOS 9.3, *)
     fileprivate func pushSettingsToWatch() {
         if WCSession.isSupported() {
-            let session = WCSession.default()
+            let session = WCSession.default
             
             let pushSettings: () -> () = {
                 if session.isPaired && session.isWatchAppInstalled {

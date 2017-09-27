@@ -16,7 +16,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     
     //MARK: - Listen for Currency Changes
     
-    var session: WCSession = WCSession.default()
+    var session = WCSession.default
     
     func applicationDidFinishLaunching() {
         session.delegate = self

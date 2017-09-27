@@ -30,7 +30,7 @@ class YearController : WKInterfaceController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateForCurrency), name: ICRefreshCurrencyNotification, object: nil)
     }
     
-    func updateForCurrency() {
+    @objc func updateForCurrency() {
         Inflation.Controller.clampYearsToCurrencyRange()
         
         if identityDummy != nil {

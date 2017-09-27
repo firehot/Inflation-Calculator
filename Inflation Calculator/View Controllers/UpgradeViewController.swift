@@ -117,7 +117,7 @@ class UpgradeViewController : UIViewController {
     func purchaseSuccessful() {
         let presentingViewController = self.presentingViewController
         
-        self.dismiss(animated: true, completion: { _ in
+        self.dismiss(animated: true, completion: {
             if let presenter = presentingViewController as? NavigationController {
                 if let inflationController = presenter.viewControllers.first as? InflationViewController {
                     inflationController.presentCurrencySelector()

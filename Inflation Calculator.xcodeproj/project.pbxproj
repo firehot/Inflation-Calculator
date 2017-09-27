@@ -18,6 +18,7 @@
 		2E3B7C3E1E1F66EE00CC2133 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B7C3D1E1F66EE00CC2133 /* NavigationController.swift */; };
 		2E5B33A71E21B48200E4B923 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5B33A61E21B48200E4B923 /* StoreKit.framework */; };
 		2E5B33A91E21BA7000E4B923 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5B33A81E21BA7000E4B923 /* Launch.storyboard */; };
+		2E64BB051F7C3D5000C51717 /* RateVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E64BB041F7C3D5000C51717 /* RateVewController.swift */; };
 		2E7D8CD21C1F85660031499D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7D8CD01C1F85660031499D /* Interface.storyboard */; };
 		2E7D8CD41C1F85660031499D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E7D8CD31C1F85660031499D /* Assets.xcassets */; };
 		2E7D8CDB1C1F85660031499D /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2E7D8CDA1C1F85660031499D /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -31,7 +32,6 @@
 		2EA5116F1E20CC9900970604 /* Currencies in Resources */ = {isa = PBXBuildFile; fileRef = 2EA5116E1E20CC9900970604 /* Currencies */; };
 		2EA511711E20CCC100970604 /* Currency-Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA511701E20CCC100970604 /* Currency-Shared.swift */; };
 		2EA511731E20CFDA00970604 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA511721E20CFDA00970604 /* Controller.swift */; };
-		2EA511781E20EBA800970604 /* RateVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA511771E20EBA800970604 /* RateVewController.swift */; };
 		2EE6B10B19E0466F0025D4C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6B10A19E0466F0025D4C0 /* AppDelegate.swift */; };
 		2EE6B11019E046700025D4C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EE6B10E19E046700025D4C0 /* Main.storyboard */; };
 		2EE6B11219E046700025D4C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EE6B11119E046700025D4C0 /* Images.xcassets */; };
@@ -101,6 +101,7 @@
 		2E3B7C3D1E1F66EE00CC2133 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		2E5B33A61E21B48200E4B923 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2E5B33A81E21BA7000E4B923 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		2E64BB041F7C3D5000C51717 /* RateVewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateVewController.swift; sourceTree = "<group>"; };
 		2E7D8CCE1C1F85660031499D /* Inflation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inflation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E7D8CD11C1F85660031499D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		2E7D8CD31C1F85660031499D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,7 +117,6 @@
 		2EA5116E1E20CC9900970604 /* Currencies */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Currencies; sourceTree = SOURCE_ROOT; };
 		2EA511701E20CCC100970604 /* Currency-Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Currency-Shared.swift"; sourceTree = SOURCE_ROOT; };
 		2EA511721E20CFDA00970604 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
-		2EA511771E20EBA800970604 /* RateVewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateVewController.swift; sourceTree = "<group>"; };
 		2EE6B10519E0466F0025D4C0 /* Inflation Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inflation Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EE6B10919E0466F0025D4C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EE6B10A19E0466F0025D4C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 				2E261B001E1B35CD0049B898 /* InflationViewController.swift */,
 				2E3B7C371E1F41B200CC2133 /* CurrencyViewController.swift */,
 				2E2593F81E20195B006FE7AC /* UpgradeViewController.swift */,
-				2EA511771E20EBA800970604 /* RateVewController.swift */,
+				2E64BB041F7C3D5000C51717 /* RateVewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -326,13 +326,13 @@
 			attributes = {
 				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Cal;
 				TargetAttributes = {
 					2E7D8CCD1C1F85660031499D = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = FZ89A5SZ7C;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -342,7 +342,7 @@
 					2E7D8CD91C1F85660031499D = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = FZ89A5SZ7C;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -355,7 +355,7 @@
 					2EE6B10419E0466F0025D4C0 = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = FZ89A5SZ7C;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -448,7 +448,7 @@
 				2E2593F91E20195B006FE7AC /* UpgradeViewController.swift in Sources */,
 				2EE6B10B19E0466F0025D4C0 /* AppDelegate.swift in Sources */,
 				2E261B011E1B35CD0049B898 /* InflationViewController.swift in Sources */,
-				2EA511781E20EBA800970604 /* RateVewController.swift in Sources */,
+				2E64BB051F7C3D5000C51717 /* RateVewController.swift in Sources */,
 				2E261B041E1B36530049B898 /* SelectCornerRadiusView.swift in Sources */,
 				2E3B7C3C1E1F612900CC2133 /* User.swift in Sources */,
 			);
@@ -501,7 +501,8 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -520,7 +521,8 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -541,7 +543,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -563,7 +566,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -577,14 +581,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -623,14 +633,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -667,7 +683,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -685,7 +702,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

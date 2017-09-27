@@ -34,7 +34,7 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    func updateCurrency() {
+    @objc func updateCurrency() {
         Inflation.Controller.updateValuesForCPI()
     }
 

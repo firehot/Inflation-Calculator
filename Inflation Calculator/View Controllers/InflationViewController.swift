@@ -65,7 +65,7 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             let titleLabel = UILabel()
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             titleLabel.text = "Inflation Calculator"
-            titleLabel.font = UIFont.systemFont(ofSize: 26, weight: UIFontWeightMedium)
+            titleLabel.font = UIFont.systemFont(ofSize: 26, weight: .medium)
             titleLabel.textColor = .white
             
             titleLabel.layer.shadowOffset = CGSize(width: 4, height: 2)
@@ -83,23 +83,7 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     func removeHairline(from navivgationController: UINavigationController?) {
-
-        func findHairline(under view: UIView?) -> UIView? {
-            guard let view = view else { return nil }
-            
-            if view.isKind(of: UIImageView.self) && view.bounds.size.height <= 1.0 {
-                return view
-            }
-            
-            for subview in view.subviews {
-                return findHairline(under: subview)
-            }
-            
-            return nil
-        }
-        
-        let hairline = findHairline(under: navigationController?.navigationBar)
-        hairline?.alpha = 0.0
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     
@@ -384,8 +368,8 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let year = self.currency.years[row]
         return NSAttributedString(string: "\(year)", attributes: [
-            NSFontAttributeName : UIFont.systemFont(ofSize: 20.0),
-            NSForegroundColorAttributeName : UIColor.white
+            .font : UIFont.systemFont(ofSize: 20.0),
+            .foregroundColor : UIColor.white
         ])
     }
     

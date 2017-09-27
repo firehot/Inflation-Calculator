@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func appBecameVisible() {
         User.current.numberOfAppLaunches += 1
-        print(User.current.numberOfAppLaunches)
         
         if User.current.isEligableForRateAlert {
             guard let navigation = window?.rootViewController else { return }

@@ -57,7 +57,7 @@ class ValueController : WKInterfaceController {
         updateLabel()
     }
     
-    func updateLabel(){
+    @objc func updateLabel(){
         let decimalCount = (self.decimalState == .disabled ? 0 : 2)
         label.setText(currentValue.format(using: Inflation.Controller.currency, decimalCount: decimalCount))
         
