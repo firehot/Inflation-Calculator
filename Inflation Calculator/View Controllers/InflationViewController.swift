@@ -65,7 +65,7 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             let titleLabel = UILabel()
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             titleLabel.text = "Inflation Calculator"
-            titleLabel.font = UIFont.systemFont(ofSize: 26, weight: .medium)
+            titleLabel.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
             titleLabel.textColor = .white
             
             titleLabel.layer.shadowOffset = CGSize(width: 4, height: 2)
@@ -83,7 +83,26 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     func removeHairline(from navivgationController: UINavigationController?) {
-        navigationController?.navigationBar.shadowImage = UIImage()
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.shadowImage = UIImage()
+        } else {
+            func findHairline(under view: UIView?) -> UIView? {
+                guard let view = view else { return nil }
+                
+                if view.isKind(of: UIImageView.self) && view.bounds.size.height <= 1.0 {
+                    return view
+                }
+                
+                for subview in view.subviews {
+                    return findHairline(under: subview)
+                }
+                
+                return nil
+            }
+            
+            let hairline = findHairline(under: navigationController?.navigationBar)
+            hairline?.alpha = 0.0
+        }
     }
     
     
@@ -365,12 +384,23 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         return 32.0
     }
     
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    func pickerView(
+        _ pickerView: UIPickerView,
+        viewForRow row: Int,
+        forComponent component: Int,
+        reusing view: UIView?) -> UIView
+    {
         let year = self.currency.years[row]
-        return NSAttributedString(string: "\(year)", attributes: [
-            .font : UIFont.systemFont(ofSize: 20.0),
-            .foregroundColor : UIColor.white
-        ])
+        let attributedString = NSAttributedString(string: "\(year)", attributes: [
+            .font : UIFont.systemFont(
+                ofSize: year == 2017 ? 22.0 : 20.0,
+                weight: year == 2017 ? .bold : .medium),
+            .foregroundColor : UIColor.white])
+        
+        let label = view as? UILabel ?? UILabel()
+        label.textAlignment = .center
+        label.attributedText = attributedString
+        return label
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

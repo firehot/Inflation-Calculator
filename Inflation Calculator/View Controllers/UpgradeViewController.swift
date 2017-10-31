@@ -49,7 +49,7 @@ class UpgradeViewController : UIViewController {
                 formatter.locale = product.priceLocale
                 formatter.numberStyle = .currency
                 
-                self.titleLabel.text = product.localizedTitle
+                //self.titleLabel.text = product.localizedTitle
                 self.priceLabel.text = formatter.string(from: product.price)
             }
         }
