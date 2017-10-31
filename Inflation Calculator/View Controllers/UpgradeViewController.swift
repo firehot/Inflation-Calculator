@@ -59,10 +59,12 @@ class UpgradeViewController : UIViewController {
     //MARK: - User Interaction
     
     @IBAction func dismiss() {
+        Event.upgradeScreenDimissed.record()
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func viewFullList() {
+        Event.upgradeCurrencyListViewed.record()
         CurrencyViewController.present(over: self, allowSelection: false, completion: nil)
     }
     
@@ -115,6 +117,8 @@ class UpgradeViewController : UIViewController {
     }
     
     func purchaseSuccessful() {
+        Event.recordInternationalCurrenciesPurchased()
+        
         let presentingViewController = self.presentingViewController
         
         self.dismiss(animated: true, completion: {

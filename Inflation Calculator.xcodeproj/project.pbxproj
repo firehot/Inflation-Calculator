@@ -19,6 +19,9 @@
 		2E5B33A71E21B48200E4B923 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5B33A61E21B48200E4B923 /* StoreKit.framework */; };
 		2E5B33A91E21BA7000E4B923 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5B33A81E21BA7000E4B923 /* Launch.storyboard */; };
 		2E64BB051F7C3D5000C51717 /* RateVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E64BB041F7C3D5000C51717 /* RateVewController.swift */; };
+		2E6971F61FA81C0B003618F7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6971F41FA81C0B003618F7 /* Fabric.framework */; };
+		2E6971F71FA81C0B003618F7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6971F51FA81C0B003618F7 /* Crashlytics.framework */; };
+		2E6971F91FA81D3F003618F7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6971F81FA81D3F003618F7 /* Event.swift */; };
 		2E7D8CD21C1F85660031499D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7D8CD01C1F85660031499D /* Interface.storyboard */; };
 		2E7D8CD41C1F85660031499D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E7D8CD31C1F85660031499D /* Assets.xcassets */; };
 		2E7D8CDB1C1F85660031499D /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2E7D8CDA1C1F85660031499D /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -102,6 +105,9 @@
 		2E5B33A61E21B48200E4B923 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2E5B33A81E21BA7000E4B923 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		2E64BB041F7C3D5000C51717 /* RateVewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateVewController.swift; sourceTree = "<group>"; };
+		2E6971F41FA81C0B003618F7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		2E6971F51FA81C0B003618F7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		2E6971F81FA81D3F003618F7 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Model/Event.swift; sourceTree = "<group>"; };
 		2E7D8CCE1C1F85660031499D /* Inflation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inflation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E7D8CD11C1F85660031499D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		2E7D8CD31C1F85660031499D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,6 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E5B33A71E21B48200E4B923 /* StoreKit.framework in Frameworks */,
+				2E6971F71FA81C0B003618F7 /* Crashlytics.framework in Frameworks */,
+				2E6971F61FA81C0B003618F7 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +187,7 @@
 				2EA5116C1E20CBDB00970604 /* Currency-Shared.swift */,
 				2E3B7C3B1E1F612900CC2133 /* User.swift */,
 				2E2593FD1E2035EC006FE7AC /* StoreManager.swift */,
+				2E6971F81FA81D3F003618F7 /* Event.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -220,6 +229,8 @@
 		2EE6B0FC19E0466F0025D4C0 = {
 			isa = PBXGroup;
 			children = (
+				2E6971F51FA81C0B003618F7 /* Crashlytics.framework */,
+				2E6971F41FA81C0B003618F7 /* Fabric.framework */,
 				2EE6B10719E0466F0025D4C0 /* Inflation Calculator */,
 				2E7D8CCF1C1F85660031499D /* Watch */,
 				2E7D8CDE1C1F85660031499D /* Watch Extension */,
@@ -307,6 +318,7 @@
 				2EE6B10319E0466F0025D4C0 /* Resources */,
 				2EA682551A5CBD2400F39ECF /* Embed App Extensions */,
 				2EE9C1ED1C1E40270009BCBB /* Embed Watch Content */,
+				2E6971F31FA81BF1003618F7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -422,6 +434,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E6971F31FA81BF1003618F7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run d0baaa4b39cc862e773fe2d1a007410a48ac3008 6517af0baf8dacbafc2f24832b627c05c23d906bae0195508bf1692cd9718df5";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2E7D8CD61C1F85660031499D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -444,6 +472,7 @@
 				2E3B7C3E1E1F66EE00CC2133 /* NavigationController.swift in Sources */,
 				2E3B7C381E1F41B200CC2133 /* CurrencyViewController.swift in Sources */,
 				2EA5116D1E20CBDB00970604 /* Currency-Shared.swift in Sources */,
+				2E6971F91FA81D3F003618F7 /* Event.swift in Sources */,
 				2E3B7C361E1F396100CC2133 /* CircleView.swift in Sources */,
 				2E2593F91E20195B006FE7AC /* UpgradeViewController.swift in Sources */,
 				2EE6B10B19E0466F0025D4C0 /* AppDelegate.swift in Sources */,
@@ -677,6 +706,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Inflation Calculator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -696,6 +729,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Inflation Calculator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

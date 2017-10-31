@@ -186,8 +186,10 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     func presentCurrencySelector(force: Bool = false) {
         if User.current.hasPurchasedCurrencyUpgrade || force {
+            Event.currencyScreenViewed.record()
             CurrencyViewController.present(over: self, completion: self.updateCurrency)
         } else {
+            Event.upgradeScreenViewed.record()
             UpgradeViewController.present(over: self)
         }
     }
@@ -233,6 +235,8 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             
             let currency = Currency.all[index]
             self.updateCurrency(to: currency)
+            
+            Event.currencySelected(currency: currency.name).record()
         }
     }
     
@@ -408,8 +412,10 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         if component == 0 {
             self.leftYear = year
+            Event.leftYearSelected(year: year).record()
         } else {
             self.rightYear = year
+            Event.rightYearSelected(year: year).record()
         }
         
         self.updateLabels()
