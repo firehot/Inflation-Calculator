@@ -184,8 +184,8 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
     }
     
-    func presentCurrencySelector() {
-        if User.current.hasPurchasedCurrencyUpgrade {
+    func presentCurrencySelector(force: Bool = false) {
+        if User.current.hasPurchasedCurrencyUpgrade || force {
             CurrencyViewController.present(over: self, completion: self.updateCurrency)
         } else {
             UpgradeViewController.present(over: self)

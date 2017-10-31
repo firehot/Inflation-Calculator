@@ -26,7 +26,10 @@ class StoreManager : NSObject, SKPaymentTransactionObserver, SKProductsRequestDe
     
     var productRequestCompletions = [SKProductsRequest : (SKProduct?) -> ()]()
     
-    func requestProduct(withIdentifier identifier: StoreIdentifier, completion: @escaping (SKProduct?) -> ()) {
+    func requestProduct(
+        withIdentifier identifier: StoreIdentifier,
+        completion: @escaping (SKProduct?) -> ())
+    {
         let identifiers = Set(arrayLiteral: identifier.rawValue)
         let request = SKProductsRequest(productIdentifiers: identifiers)
         
@@ -36,25 +39,35 @@ class StoreManager : NSObject, SKPaymentTransactionObserver, SKProductsRequestDe
         request.start()
     }
     
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+    func productsRequest(
+        _ request: SKProductsRequest,
+        didReceive response: SKProductsResponse)
+    {
         let completion = productRequestCompletions[request]
         productRequestCompletions.removeValue(forKey: request)
         completion?(response.products.first)
     }
     
     
+    
     //MARK: - SKPayment
     
     var paymentCompletions = [String : (Bool) -> ()]()
     
-    func purchase(_ product: SKProduct, completion: @escaping (Bool) -> ()) {
+    func purchase(
+        _ product: SKProduct,
+        completion: @escaping (Bool) -> ())
+    {
         let payment = SKPayment(product: product)
         paymentCompletions.updateValue(completion, forKey: product.productIdentifier)
         
         SKPaymentQueue.default().add(payment)
     }
     
-    func restorePurchases(triggerCompletionFor identifier: StoreIdentifier, completion: @escaping (Bool) -> ()) {
+    func restorePurchases(
+        triggerCompletionFor identifier: StoreIdentifier,
+        completion: @escaping (Bool) -> ())
+    {
         paymentCompletions.updateValue(completion, forKey: identifier.rawValue)
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
@@ -62,7 +75,10 @@ class StoreManager : NSObject, SKPaymentTransactionObserver, SKProductsRequestDe
     
     //MARK: - SKPaymentTransactionObserver
     
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    func paymentQueue(
+        _ queue: SKPaymentQueue,
+        updatedTransactions transactions: [SKPaymentTransaction])
+    {
         
         for transaction in transactions {
             let payment = transaction.payment
@@ -92,6 +108,29 @@ class StoreManager : NSObject, SKPaymentTransactionObserver, SKProductsRequestDe
             
         }
         
+    }
+    
+    func paymentQueue(
+        _ queue: SKPaymentQueue,
+        shouldAddStorePayment payment: SKPayment,
+        for product: SKProduct) -> Bool
+    {
+        
+        if product.productIdentifier == StoreIdentifier.allCurrencies.rawValue {
+            paymentCompletions[StoreIdentifier.allCurrencies.rawValue] = { success in
+                
+                if success,
+                    let navigationController = UIApplication.shared.windows.first?.rootViewController as? NavigationController,
+                    let inflationController = navigationController.viewControllers.first as? InflationViewController
+                {
+                    inflationController.presentedViewController?.dismiss(animated: true, completion: nil)
+                    inflationController.presentCurrencySelector(force: true)
+                }
+                
+            }
+        }
+        
+        return true
     }
     
 }
