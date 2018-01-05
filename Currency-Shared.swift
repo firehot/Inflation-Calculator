@@ -61,7 +61,10 @@ struct Currency: Equatable {
         
         var data = [Year : CPI]()
         
-        let dataLines = dataText.components(separatedBy: "\r\n")
+        let dataLines = dataText
+            .replacingOccurrences(of: "\r\n", with: "\n")
+            .components(separatedBy: "\n")
+        
         for line in dataLines {
             let components = line.components(separatedBy: ",")
             if let year = Int(components[0]), let cpi = Double(components[1]) {

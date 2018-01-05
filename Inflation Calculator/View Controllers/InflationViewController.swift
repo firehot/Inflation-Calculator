@@ -48,7 +48,7 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         self.otherYearLabel = rightYearLabel
         
         self.updateCurrency(to: User.current.currency)
-        self.setYears(targetingOnLeft: 1980, targetingOnRight: 2017)
+        self.setYears(targetingOnLeft: 1980, targetingOnRight: 2018)
         self.updateLabels()
     }
     
@@ -201,7 +201,7 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     var decimalCount = 0
     
     var leftYear: Year = 1980
-    var rightYear: Year = 2017
+    var rightYear: Year = 2018
     
     var otherDollarValue: Double {
         return currency.calculateInflation(of: currentDollarValue, from: currentYear, to: otherYear) ?? currentDollarValue
@@ -411,8 +411,8 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         let year = self.currency.years[row]
         let attributedString = NSAttributedString(string: "\(year)", attributes: [
             .font : UIFont.systemFont(
-                ofSize: year == 2017 ? 22.0 : 20.0,
-                weight: year == 2017 ? .bold : .medium),
+                ofSize: year == 2018 ? 22.0 : 20.0,
+                weight: year == 2018 ? .bold : .medium),
             .foregroundColor : UIColor.white])
         
         let label = view as? UILabel ?? UILabel()

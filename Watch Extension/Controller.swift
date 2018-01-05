@@ -20,7 +20,7 @@ class Inflation {
         static var dollars2HasDecimal = false
         
         static var year1 : Int = 1980
-        static var year2 : Int = 2017
+        static var year2 : Int = 2018
         
         static var anchor1: Bool = true
         

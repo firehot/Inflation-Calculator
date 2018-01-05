@@ -55,6 +55,11 @@ class User : NSObject, WCSessionDelegate {
     
     var hasPurchasedCurrencyUpgrade: Bool {
         get {
+            
+            #if DEBUG
+            return true
+            #endif
+            
             guard let string = UserDefaults.standard.get(Key.currencyUpgradePurchased) as? String else { return false }
             return string == self.purchasedFlag
         }
