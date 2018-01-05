@@ -241,6 +241,10 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     func updateCurrency(to currency: Currency) {
+        guard self.currency != currency else {
+            return
+        }
+        
         self.currency = currency
         
         self.currencyLabel.text = currency.name
@@ -248,6 +252,7 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         self.updateLabels()
         self.pickerView.reloadAllComponents()
+        playHaptic()
     }
     
     func setYears(targetingOnLeft leftTargetYear: Year, targetingOnRight rightTargetYear: Year) {
@@ -336,10 +341,12 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         self.decimalCount = 0
         self.decimalModeEnabled = false
         updateLabels()
+        playHaptic()
     }
     
     func updateLabels() {
         self.currentYearLabel.text = "\(currentYear)"
+        self.otherYearLabel.text = "\(otherYear)"
         
         let decimalDisplayCount = (self.decimalModeEnabled) ? 2 : 0
         currentDollarsLabel.text = currentDollarValue.format(using: self.currency, decimalCount: decimalDisplayCount)
@@ -356,6 +363,7 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             swapViews()
             updateViewColors()
             updateLabels()
+            playHaptic()
         }
     }
     
@@ -371,6 +379,12 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         self.currentYearView.backgroundColor = self.selectedYearColor
         self.otherDollarsView.backgroundColor = self.unselectedColor
         self.otherYearView.backgroundColor = self.unselectedColor
+    }
+    
+    private func playHaptic() {
+        if #available(iOS 10.0, *) {
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        }
     }
     
     
@@ -419,6 +433,7 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
         
         self.updateLabels()
+        playHaptic()
     }
     
 }

@@ -11,7 +11,7 @@ import Foundation
 typealias Year = Int
 typealias CPI = Double
 
-struct Currency {
+struct Currency: Equatable {
     
     
     //MARK: - Defined Currencies
@@ -91,6 +91,10 @@ struct Currency {
     func calculateInflation(of value: Double, from year1: Year, to year2: Year) -> Double? {
         guard let cpi1 = cpi(for: year1), let cpi2 = cpi(for: year2) else { return nil }
         return (cpi2 / cpi1) * value
+    }
+    
+    static func ==(left: Currency, right: Currency) -> Bool {
+        return left.name == right.name && left.data == right.data
     }
 
 }
