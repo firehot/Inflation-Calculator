@@ -11,7 +11,7 @@ import Foundation
 typealias Year = Int
 typealias CPI = Double
 
-struct Currency: Equatable {
+struct Currency {
     
     
     //MARK: - Defined Currencies
@@ -95,12 +95,10 @@ struct Currency: Equatable {
         guard let cpi1 = cpi(for: year1), let cpi2 = cpi(for: year2) else { return nil }
         return (cpi2 / cpi1) * value
     }
-    
-    static func ==(left: Currency, right: Currency) -> Bool {
-        return left.name == right.name && left.data == right.data
-    }
 
 }
+
+// MARK: Double + CurrencyFormatter
 
 extension Double {
     
@@ -131,4 +129,20 @@ extension Double {
         return stringWithDecimal
     }
     
+}
+
+// MARK: Currency+Equatable
+
+extension Currency: Equatable {
+    static func ==(left: Currency, right: Currency) -> Bool {
+        return left.name == right.name
+    }
+}
+
+// MARK: Currency+Hashable
+
+extension Currency: Hashable {
+    var hashValue: Int {
+        return name.hashValue
+    }
 }
