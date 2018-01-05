@@ -18,7 +18,6 @@
 		2E3B7C3E1E1F66EE00CC2133 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B7C3D1E1F66EE00CC2133 /* NavigationController.swift */; };
 		2E5B33A71E21B48200E4B923 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5B33A61E21B48200E4B923 /* StoreKit.framework */; };
 		2E5B33A91E21BA7000E4B923 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5B33A81E21BA7000E4B923 /* Launch.storyboard */; };
-		2E64BB051F7C3D5000C51717 /* RateVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E64BB041F7C3D5000C51717 /* RateVewController.swift */; };
 		2E6971F61FA81C0B003618F7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6971F41FA81C0B003618F7 /* Fabric.framework */; };
 		2E6971F71FA81C0B003618F7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6971F51FA81C0B003618F7 /* Crashlytics.framework */; };
 		2E6971F91FA81D3F003618F7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6971F81FA81D3F003618F7 /* Event.swift */; };
@@ -104,7 +103,6 @@
 		2E3B7C3D1E1F66EE00CC2133 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		2E5B33A61E21B48200E4B923 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2E5B33A81E21BA7000E4B923 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
-		2E64BB041F7C3D5000C51717 /* RateVewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateVewController.swift; sourceTree = "<group>"; };
 		2E6971F41FA81C0B003618F7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		2E6971F51FA81C0B003618F7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		2E6971F81FA81D3F003618F7 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Model/Event.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				2E261B001E1B35CD0049B898 /* InflationViewController.swift */,
 				2E3B7C371E1F41B200CC2133 /* CurrencyViewController.swift */,
 				2E2593F81E20195B006FE7AC /* UpgradeViewController.swift */,
-				2E64BB041F7C3D5000C51717 /* RateVewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -477,7 +474,6 @@
 				2E2593F91E20195B006FE7AC /* UpgradeViewController.swift in Sources */,
 				2EE6B10B19E0466F0025D4C0 /* AppDelegate.swift in Sources */,
 				2E261B011E1B35CD0049B898 /* InflationViewController.swift in Sources */,
-				2E64BB051F7C3D5000C51717 /* RateVewController.swift in Sources */,
 				2E261B041E1B36530049B898 /* SelectCornerRadiusView.swift in Sources */,
 				2E3B7C3C1E1F612900CC2133 /* User.swift in Sources */,
 			);

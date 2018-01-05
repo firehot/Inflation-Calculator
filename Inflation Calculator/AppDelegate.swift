@@ -11,7 +11,6 @@ import StoreKit
 import Fabric
 import Crashlytics
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -39,10 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         User.current.numberOfAppLaunches += 1
         
         if User.current.isEligableForRateAlert {
-            guard let navigation = window?.rootViewController else { return }
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) {
-                RateViewController.present(over: navigation)
+                if #available(iOS 10.3, *) {
+                    SKStoreReviewController.requestReview()
+                }
             }
         }
     }

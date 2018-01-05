@@ -84,31 +84,9 @@ class User : NSObject, WCSessionDelegate {
         }
     }
     
-    var hasRatedApp: Bool {
-        get {
-            return UserDefaults.standard.bool(for: Key.userHasRatedApp)
-        }
-
-        set(newValue) {
-            UserDefaults.standard.update(Key.userHasRatedApp, to: newValue)
-        }
-    }
-    
-    var neverShowRateAlert: Bool {
-        get {
-            return UserDefaults.standard.bool(for: Key.neverShowRateAlert)
-        }
-        
-        set(newValue) {
-            UserDefaults.standard.update(Key.neverShowRateAlert, to: newValue)
-        }
-    }
-    
     var isEligableForRateAlert: Bool {
         return (numberOfAppLaunches == 4 || numberOfAppLaunches % 10 == 0)
             && numberOfAppLaunches != 0
-            && !hasRatedApp
-            && !neverShowRateAlert
     }
     
     
