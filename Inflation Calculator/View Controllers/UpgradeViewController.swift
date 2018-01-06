@@ -95,7 +95,7 @@ class UpgradeViewController : UIViewController {
         }
         
         guard let product = self.product, self.productLoaded else {
-            self.showAlert(title: "Cannot Connect to the App Store", message: "We're having trouble connecting to the App Store. Are you connected to the internet?")
+            self.showAlert(title: "Cannot Connect to the App Store", message: "We could not download purchase information from the App Store. You may not be connected to the internet.")
             return
         }
         

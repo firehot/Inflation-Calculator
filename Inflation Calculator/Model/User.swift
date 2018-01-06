@@ -17,6 +17,8 @@ class User : NSObject, WCSessionDelegate {
         case userHasRatedApp = "User.hasAlreadyRatedApp"
         case neverShowRateAlert = "User.doNotShowRateAlert"
         case numberOfAppLaunches = "User.numberOfLaunches"
+        case amountTipped = "User.amountTipped"
+        case tipCurrencyLocale = "User.tipCurrencyLocale"
     }
     
     static let current = User()
@@ -55,11 +57,6 @@ class User : NSObject, WCSessionDelegate {
     
     var hasPurchasedCurrencyUpgrade: Bool {
         get {
-            
-            #if DEBUG
-            return true
-            #endif
-            
             guard let string = UserDefaults.standard.get(Key.currencyUpgradePurchased) as? String else { return false }
             return string == self.purchasedFlag
         }
@@ -67,6 +64,29 @@ class User : NSObject, WCSessionDelegate {
         set(newValue) {
             let valueToStore = (newValue) ? self.purchasedFlag : nil
             UserDefaults.standard.update(Key.currencyUpgradePurchased, to: valueToStore)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    var tipCurrencyLocale: Locale {
+        get {
+            guard let identifier = UserDefaults.standard.get(Key.tipCurrencyLocale) as? String else { return .current }
+            return Locale(identifier: identifier)
+        }
+        
+        set {
+            UserDefaults.standard.update(Key.tipCurrencyLocale, to: newValue.identifier)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    var amountTipped: Double {
+        get {
+            return UserDefaults.standard.get(Key.amountTipped) as? Double ?? 0
+        }
+        
+        set {
+            UserDefaults.standard.update(Key.amountTipped, to: newValue)
             UserDefaults.standard.synchronize()
         }
     }

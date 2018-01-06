@@ -10,6 +10,7 @@ import UIKit
 import StoreKit
 import Fabric
 import Crashlytics
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

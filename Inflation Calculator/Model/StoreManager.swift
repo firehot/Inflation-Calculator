@@ -10,6 +10,8 @@ import StoreKit
 
 enum StoreIdentifier: String {
     case allCurrencies = "currencies"
+    case smallTip = "smallTip"
+    case largeTip = "largeTip"
 }
 
 class StoreManager : NSObject, SKPaymentTransactionObserver, SKProductsRequestDelegate {

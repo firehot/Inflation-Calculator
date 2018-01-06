@@ -23,6 +23,10 @@ enum Event {
     case currencyScreenViewed
     case currencySelected(currency: String)
     
+    case aboutScreenViewed
+    case aboutWebsiteVisited
+    case currencySourceWebsiteVisited(currency: String)
+    
     static func recordInternationalCurrenciesPurchased() {
         Answers.logPurchase(
             withPrice: 1.99,
@@ -33,6 +37,29 @@ enum Event {
             itemId: "currencies",
             customAttributes: nil)
     }
+    
+    static func recordSmallTipPurchased() {
+        Answers.logPurchase(
+            withPrice: 0.99,
+            currency: "USD",
+            success: true,
+            itemName: "Small Tip",
+            itemType: "Consumable",
+            itemId: "smallTip",
+            customAttributes: nil)
+    }
+    
+    static func recordLargeTipPurchased() {
+        Answers.logPurchase(
+            withPrice: 1.99,
+            currency: "USD",
+            success: true,
+            itemName: "Large Tip",
+            itemType: "Consumable",
+            itemId: "largeTip",
+            customAttributes: nil)
+    }
+    
 }
 
 // MARK: Event+Fabric
@@ -54,16 +81,21 @@ extension Event {
         case .currencySelected(_): return "Currency Selected"
         case .upgradeScreenDimissed: return "Upgrade Screen Dismissed"
         case .upgradeCurrencyListViewed: return "Upgrade Currency List Viewed"
+        case .aboutScreenViewed: return "About Screen Viewed"
+        case .aboutWebsiteVisited: return "About Website Visited"
+        case .currencySourceWebsiteVisited(_): return "Currency Source Website Visited"
         }
     }
     
     private var customAttributes: [String: Any]? {
         switch(self) {
-        case .leftYearSelected(year: let year):
+        case .leftYearSelected(let year):
             return ["year": year]
-        case .rightYearSelected(year: let year):
+        case .rightYearSelected(let year):
             return ["year": year]
-        case .currencySelected(currency: let currency):
+        case .currencySelected(let currency):
+            return ["currency": currency]
+        case .currencySourceWebsiteVisited(let currency):
             return ["currency": currency]
         default:
             return nil

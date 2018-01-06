@@ -65,7 +65,7 @@ class InflationViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             let titleLabel = UILabel()
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             titleLabel.text = "Inflation Calculator"
-            titleLabel.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
+            titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
             titleLabel.textColor = .white
             
             titleLabel.layer.shadowOffset = CGSize(width: 4, height: 2)
