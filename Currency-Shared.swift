@@ -105,6 +105,7 @@ extension Double {
     func format(using currency: Currency, decimalCount: Int) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
+        formatter.currencySymbol = "$"
         
         let prefix = (currency.symbol.characters.count >= 2)
                       ? "\(currency.symbol) "
