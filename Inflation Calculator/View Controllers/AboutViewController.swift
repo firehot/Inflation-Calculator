@@ -124,10 +124,22 @@ class AboutViewController: UIViewController {
     
     @IBAction func smallTipButtonPressed() {
         purchaseTipProduct(loadedProducts[.smallTip])
+        flashButton(smallTipButton)
     }
     
     @IBAction func largeTipButtonPressed() {
         purchaseTipProduct(loadedProducts[.largeTip])
+        flashButton(largeTipButton)
+    }
+    
+    private func flashButton(_ button: UIButton) {
+        UIView.animate(withDuration: 0.2, animations: {
+            button.titleLabel?.alpha = 0.2
+        })
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            button.titleLabel?.alpha = 1.0
+        })
     }
     
     private func purchaseTipProduct(_ product: SKProduct?, waitIfNotLoaded: Bool = true) {
